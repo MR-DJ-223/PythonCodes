@@ -47,21 +47,28 @@ class FlamesGame:
         else:
             result_color = 'red'
 
-        print((f"{self.Results['Player1']} and {self.Results['Player2']} Are Becomde : {result}", result_color, attrs=['bold']), "\n")
+        print(f"{self.Results['Player1']} and {self.Results['Player2']} Are Becomde : {result}", "\n")
         return result
 
 
 if __name__ == "__main__":
     inputs = input(f'Enter any key to start the game, or Enter Q to quit')
     tag = True
+    Game = FlamesGame().Flames()
+    wrong=0
     while tag:
+        if wrong==4:
+            print(f" You have Entered wrong input values more then 3 times . Please restart the game again")
+            break
         if 'q' != inputs.lower():
-            Game = FlamesGame().Flames()
+            
             new = input("Do you want to continue..? Yes/No : ").lower()
             if new in ["yes", "y", "n", "no"]:
                 if new in ["n", "no"]:
                     tag = False
                 else:
+                    Game = FlamesGame().Flames()
                     tag = True
             else:
+                wrong+=1
                 print(f" Please check your Input")
