@@ -1,5 +1,5 @@
-from json import load, dump
-from termcolor import colored
+# from json import load, dump
+# from termcolor import colored
 
 FlamesData = {
     "F": "Friend", "L": "Lover", "A": "Affectionate",
@@ -8,8 +8,8 @@ FlamesData = {
 
 class FlamesGame:
     def __init__(self) -> None:
-        with open("data.json", 'r+') as file:
-            self.data = load(file)
+        # with open("data.json", 'r+') as file:
+        #     self.data = load(file)
 
         self.Results = {"Player1": '', "Player2": ''}
 
@@ -47,7 +47,7 @@ class FlamesGame:
         else:
             result_color = 'red'
 
-        print(colored(f"{self.Results['Player1']} and {self.Results['Player2']} Are Becomde : {result}", result_color, attrs=['bold']), "\n")
+        print((f"{self.Results['Player1']} and {self.Results['Player2']} Are Becomde : {result}", result_color, attrs=['bold']), "\n")
         return result
 
 
